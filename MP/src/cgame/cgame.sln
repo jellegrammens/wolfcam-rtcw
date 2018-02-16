@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 15 for Windows Desktop
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cgame", "cgame.vcxproj", "{4A11C346-52D5-4CB7-B2AC-5F241768CD56}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game", "..\game\game.vcxproj", "{01D0989E-AC9B-42DF-AD03-9EB5B11B6916}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ui", "..\ui\ui.vcxproj", "{4CA76C84-166A-42EC-B12A-AA72972A1D67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+		Template|x86 = Template|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A11C346-52D5-4CB7-B2AC-5F241768CD56}.Debug|x86.ActiveCfg = Debug|Win32
+		{4A11C346-52D5-4CB7-B2AC-5F241768CD56}.Debug|x86.Build.0 = Debug|Win32
+		{4A11C346-52D5-4CB7-B2AC-5F241768CD56}.Release|x86.ActiveCfg = Release|Win32
+		{4A11C346-52D5-4CB7-B2AC-5F241768CD56}.Release|x86.Build.0 = Release|Win32
+		{4A11C346-52D5-4CB7-B2AC-5F241768CD56}.Template|x86.ActiveCfg = Release|Win32
+		{4A11C346-52D5-4CB7-B2AC-5F241768CD56}.Template|x86.Build.0 = Release|Win32
+		{01D0989E-AC9B-42DF-AD03-9EB5B11B6916}.Debug|x86.ActiveCfg = Debug|Win32
+		{01D0989E-AC9B-42DF-AD03-9EB5B11B6916}.Debug|x86.Build.0 = Debug|Win32
+		{01D0989E-AC9B-42DF-AD03-9EB5B11B6916}.Release|x86.ActiveCfg = Release|Win32
+		{01D0989E-AC9B-42DF-AD03-9EB5B11B6916}.Release|x86.Build.0 = Release|Win32
+		{01D0989E-AC9B-42DF-AD03-9EB5B11B6916}.Template|x86.ActiveCfg = Release|Win32
+		{01D0989E-AC9B-42DF-AD03-9EB5B11B6916}.Template|x86.Build.0 = Release|Win32
+		{4CA76C84-166A-42EC-B12A-AA72972A1D67}.Debug|x86.ActiveCfg = Debug|Win32
+		{4CA76C84-166A-42EC-B12A-AA72972A1D67}.Debug|x86.Build.0 = Debug|Win32
+		{4CA76C84-166A-42EC-B12A-AA72972A1D67}.Release|x86.ActiveCfg = Release|Win32
+		{4CA76C84-166A-42EC-B12A-AA72972A1D67}.Release|x86.Build.0 = Release|Win32
+		{4CA76C84-166A-42EC-B12A-AA72972A1D67}.Template|x86.ActiveCfg = Template|Win32
+		{4CA76C84-166A-42EC-B12A-AA72972A1D67}.Template|x86.Build.0 = Template|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C1F5360-C360-45CA-A764-4C7116C00789}
+	EndGlobalSection
+EndGlobal
