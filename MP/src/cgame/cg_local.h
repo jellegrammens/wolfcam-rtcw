@@ -1782,6 +1782,7 @@ extern	vmCvar_t	mm_blood;
 extern	vmCvar_t	mm_shadowedPopups;
 extern	vmCvar_t	mm_freecamConsole;
 extern	vmCvar_t	mm_wtvchat;
+extern	vmCvar_t	mm_follow;
 extern  vmCvar_t	demo_numPopups;
 extern	vmCvar_t	demo_popupHeight;
 extern	vmCvar_t	demo_popupWidth;

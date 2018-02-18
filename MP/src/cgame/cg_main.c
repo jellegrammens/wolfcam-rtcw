@@ -277,6 +277,7 @@ vmCvar_t	mm_blood;
 vmCvar_t	mm_shadowedPopups;
 vmCvar_t	mm_freecamConsole;
 vmCvar_t	mm_wtvchat;
+vmCvar_t	mm_follow;
 vmCvar_t	demo_numPopups;
 vmCvar_t	demo_popupHeight;
 vmCvar_t	demo_popupWidth;
@@ -512,6 +513,7 @@ cvarTable_t		cvarTable[] = {
 	{ &mm_shadowedPopups, "mm_shadowedPopups", "0", CVAR_ARCHIVE },
 	{ &mm_freecamConsole, "mm_freecamConsole", "0", CVAR_ARCHIVE },
 	{ &mm_wtvchat, "mm_wtvchat", "1", CVAR_ARCHIVE },
+	{ &mm_follow, "mm_follow", "-1", CVAR_ARCHIVE },
 	{ &demo_numPopups, "demo_numPopups", "8", CVAR_ARCHIVE },
 	{ &demo_popupHeight, "demo_popupHeight", "10", CVAR_ARCHIVE },
 	{ &demo_popupWidth, "demo_popupWidth", "8", CVAR_ARCHIVE }

@@ -1,5 +1,106 @@
-﻿  cg_consolecmds.c
-C:\Program Files (x86)\Microsoft Visual Studio\2017\WDExpress\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1198,5): warning MSB8012: TargetPath(C:\Users\Jelle\Downloads\wolfcam-rtcw\MP\src\cgame\.\Release\cgame.dll) does not match the Linker's OutputFile property value (C:\Users\Jelle\Downloads\wolfcam-rtcw\MP\src\Release\cgame_mp_x86.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+﻿  bg_animation.c
+  bg_misc.c
+  bg_pmove.c
+  bg_slidemove.c
+  q_math.c
+  q_shared.c
+  ui_shared.c
+..\ui\ui_shared.c(4211): warning C4456: declaration of 'parent' hides previous local declaration
+  ..\ui\ui_shared.c(4201): note: see declaration of 'parent'
+  cg_consolecmds.c
+  cg_draw.c
+cg_draw.c(115): warning C4189: 'sizex': local variable is initialized but not referenced
+cg_draw.c(115): warning C4189: 'sizey': local variable is initialized but not referenced
+cg_draw.c(114): warning C4189: 'colourText': local variable is initialized but not referenced
+  cg_drawtools.c
+  cg_effects.c
+cg_effects.c(359): warning C4456: declaration of 'vec' hides previous local declaration
+  cg_effects.c(331): note: see declaration of 'vec'
+  cg_ents.c
+cg_ents.c(1563): warning C4456: declaration of 'angles' hides previous local declaration
+  cg_ents.c(1543): note: see declaration of 'angles'
+  cg_event.c
+cg_event.c(295): warning C4013: 'CG_AddPMItem' undefined; assuming extern returning int
+  cg_flamethrower.c
+cg_flamethrower.c(1049): warning C4456: declaration of 'alpha' hides previous local declaration
+  cg_flamethrower.c(879): note: see declaration of 'alpha'
+cg_flamethrower.c(1050): warning C4456: declaration of 'skip' hides previous local declaration
+  cg_flamethrower.c(890): note: see declaration of 'skip'
+  cg_info.c
+  cg_localents.c
+  cg_main.c
+cg_main.c(1651): warning C4456: declaration of 'name' hides previous local declaration
+  cg_main.c(1219): note: see declaration of 'name'
+cg_main.c(1663): warning C4456: declaration of 'name' hides previous local declaration
+  cg_main.c(1219): note: see declaration of 'name'
+  cg_marks.c
+  cg_newDraw.c
+  cg_particles.c
+cg_particles.c(582): warning C4457: declaration of 'alpha' hides function parameter
+  cg_particles.c(159): note: see declaration of 'alpha'
+cg_particles.c(644): warning C4456: declaration of 'width' hides previous local declaration
+  cg_particles.c(164): note: see declaration of 'width'
+cg_particles.c(644): warning C4456: declaration of 'height' hides previous local declaration
+  cg_particles.c(165): note: see declaration of 'height'
+  Generating Code...
+  Compiling...
+  cg_players.c
+cg_players.c(2583): warning C4456: declaration of 'alpha' hides previous local declaration
+  cg_players.c(2471): note: see declaration of 'alpha'
+cg_players.c(2963): warning C4456: declaration of 'i' hides previous local declaration
+  cg_players.c(2714): note: see declaration of 'i'
+  cg_playerstate.c
+  cg_predict.c
+  cg_scoreboard.c
+cg_scoreboard.c(206): warning C4456: declaration of 's' hides previous local declaration
+  cg_scoreboard.c(157): note: see declaration of 's'
+cg_scoreboard.c(206): warning C4456: declaration of 'buf' hides previous local declaration
+  cg_scoreboard.c(157): note: see declaration of 'buf'
+  cg_servercmds.c
+  cg_snapshot.c
+  cg_sound.c
+  cg_spawn.c
+  cg_syscalls.c
+  cg_trails.c
+cg_trails.c(668): warning C4456: declaration of 'k' hides previous local declaration
+  cg_trails.c(402): note: see declaration of 'k'
+cg_trails.c(681): warning C4456: declaration of 'k' hides previous local declaration
+  cg_trails.c(402): note: see declaration of 'k'
+  cg_view.c
+  cg_weapons.c
+cg_weapons.c(2700): warning C4456: declaration of 'angles' hides previous local declaration
+  cg_weapons.c(2315): note: see declaration of 'angles'
+cg_weapons.c(4543): warning C4457: declaration of 'cent' hides function parameter
+  cg_weapons.c(4405): note: see declaration of 'cent'
+  wolfcam_consolecmds.c
+wolfcam_consolecmds.c(207): warning C4456: declaration of 'w' hides previous local declaration
+  wolfcam_consolecmds.c(203): note: see declaration of 'w'
+wolfcam_consolecmds.c(226): warning C4456: declaration of 'w' hides previous local declaration
+  wolfcam_consolecmds.c(203): note: see declaration of 'w'
+  wolfcam_draw.c
+wolfcam_draw.c(2127): warning C4456: declaration of 'cent' hides previous local declaration
+  wolfcam_draw.c(2099): note: see declaration of 'cent'
+wolfcam_draw.c(2157): warning C4456: declaration of 'cent' hides previous local declaration
+  wolfcam_draw.c(2099): note: see declaration of 'cent'
+  wolfcam_drawtools.c
+  wolfcam_ents.c
+  wolfcam_info.c
+  wolfcam_main.c
+  wolfcam_newDraw.c
+  wolfcam_playerstate.c
+  Generating Code...
+c:\users\jelle\documents\git\wolfcam-rtcw\mp\src\cgame\cg_view.c(1334): warning C4706: assignment within conditional expression
+c:\users\jelle\documents\git\wolfcam-rtcw\mp\src\cgame\cg_sound.c(323): warning C4701: potentially uninitialized local variable 'sound' used
+  Compiling...
+  wolfcam_servercmds.c
+  wolfcam_snapshot.c
+  wolfcam_view.c
+  wolfcam_weapons.c
+wolfcam_weapons.c(647): warning C4456: declaration of 'angles' hides previous local declaration
+  wolfcam_weapons.c(276): note: see declaration of 'angles'
+  Generating Code...
+c:\users\jelle\documents\git\wolfcam-rtcw\mp\src\cgame\wolfcam_snapshot.c(67): warning C4701: potentially uninitialized local variable 'oldGroundEntityNum' used
+C:\Program Files (x86)\Microsoft Visual Studio\2017\WDExpress\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1198,5): warning MSB8012: TargetPath(C:\Users\Jelle\Documents\GIT\wolfcam-rtcw\MP\src\cgame\.\Release\cgame.dll) does not match the Linker's OutputFile property value (C:\Users\Jelle\Documents\GIT\wolfcam-rtcw\MP\src\Release\cgame_mp_x86.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
 C:\Program Files (x86)\Microsoft Visual Studio\2017\WDExpress\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1200,5): warning MSB8012: TargetName(cgame) does not match the Linker's OutputFile property value (cgame_mp_x86). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
      Creating library .\Release\cgame_mp_x86.lib and object .\Release\cgame_mp_x86.exp
-  cgame.vcxproj -> C:\Users\Jelle\Downloads\wolfcam-rtcw\MP\src\cgame\.\Release\cgame.dll
+  cgame.vcxproj -> C:\Users\Jelle\Documents\GIT\wolfcam-rtcw\MP\src\cgame\.\Release\cgame.dll

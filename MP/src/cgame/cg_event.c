@@ -133,6 +133,10 @@ static void CG_Obituary( entityState_t *ent ) {
     else
         clientNum = cg.snap->ps.clientNum;
 
+	//mm follow
+	if (mm_follow.integer != -1)
+		clientNum = mm_follow.integer;
+
 	// DHM - Nerve :: Set killtype
 	if( attacker == clientNum )
 		killtype = 2;
