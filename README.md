@@ -3,7 +3,7 @@
 This RTCW mod is a modification of the wolfcam 0.0.5 RTCW mod from Brugal. I've made these changes for myself for my upcoming RTCW history movie. I use this mod combined with the RTCW demo analyzer, which is also available on my GitHub account.
 
 # Context
-There are a lot of different moviemods or viewing mods for RTCW such as: wolfcam, uvMovieMod, Demoviewer and Viewpoint are the most known ones. However, all these mods have their strenghts, weaknesses and limitations. I only want to use 1 mod for all RTCW versions with all features 'One RTCW moviemod to rule them all'.
+There are a lot of different moviemods or viewing mods for RTCW such as: wolfcam, uvMovieMod, Demoviewer and Viewpoint are the most known ones. However, all these mods have their strenghts, weaknesses and limitations. I only want to use 1 mod for all RTCW versions with all features "One RTCW moviemod to rule them all".
 
 # Changes Made:
 - Obituaries ("Player1 killed Player2 with MP40") support for older RTCW versions 1.0 and 1.3x (protocol 57, 58 and 59):
@@ -17,7 +17,7 @@ There are a lot of different moviemods or viewing mods for RTCW such as: wolfcam
 - /follow [clientid] - follow selected client. /follow -1 follows original demo POV
 - /wolfcam_avoidDemoPov [0/1] - avoids trying to follow demo POV
 - /wolfcam_tryToStickWithTeam [0/1] - tries to stick with team of demo POV
-- /wolfcam_wh [0/1] - activates a wallhack, but isn't perfectly implemented.
+- /wolfcam_wh [0/1] - activates a wallhack, but isn't perfectly implemented
 
 ### UvMovieMod:
 - /mm_demoCrosshair [0/1] - draw a crosshair while in cg_draw2d 0
@@ -27,7 +27,6 @@ There are a lot of different moviemods or viewing mods for RTCW such as: wolfcam
 - /mm_vapYourselfe [0/1] - draws vaporized, grenaded himself popups 
 - /mm_bloodflash [0/1] - draws blood or not
 - /mm_shadowedPopups [0/1] - adds a shadow behind popups
-- /mm_freecamConsole [0/1] -
 - /freecam - toggle, enables/disables freecam
 
 ### DemoViewer 4.1:
@@ -36,7 +35,7 @@ There are a lot of different moviemods or viewing mods for RTCW such as: wolfcam
 - /demo_popupWidth [int] -  horizontal size of popups
 
 ### Commands i have added:
-- mm_follow [clientnum]: Special command to force showing obituaries from a clientnum when in /freecam.
+- mm_follow [clientnum]: Special command to force showing obituaries from a clientnum when in /freecam
 - mm_wtvchat [0/1]: Draw WolfTV chat or not.
 
 
@@ -52,3 +51,4 @@ Launch RTCW with: wolfmp.exe +set fs_game wolfcam-rtcw
 - brugal: for releasing his source code
 - crumbs: for his moviemod source code and (mental) support he gave me for coding this
 - hannes: for creating uvMovieMod
+- MAN-AT-ARMS: for helping me with finding how to fix showing obituaries for older rtcw versions
