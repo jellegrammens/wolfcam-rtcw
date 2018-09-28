@@ -1,12 +1,12 @@
 # wolfcam-rtcw
 
-This RTCW mod is a modification of the wolfcam 0.0.5 RTCW mod from Brugal. I've made these changes for myself for my upcoming RTCW history movie. 
+This RTCW mod is a modification of the wolfcam 0.0.5 RTCW mod from Brugal. I've made these changes for myself for my upcoming RTCW history movie. I use this mod combined with the RTCW demo analyzer, which is also available on my GitHub account.
 
 # Context
-There are a lot of different moviemods or viewing mods for RTCW such as: wolfcam, uvMovieMod, Demoviewer and Viewpoint are the most known ones. However, all these mods have their strenghts, weaknesses and own features. I only want to use 1 mod for all RTCW versions with all features 'One RTCW moviemod to rule them all'.
+There are a lot of different moviemods or viewing mods for RTCW such as: wolfcam, uvMovieMod, Demoviewer and Viewpoint are the most known ones. However, all these mods have their strenghts, weaknesses and limitations. I only want to use 1 mod for all RTCW versions with all features 'One RTCW moviemod to rule them all'.
 
 # Changes Made:
-- Obituaries ("Player1 killed Player2 with MP40") support for older RTCW versions 1.0 and 1.33 (protocol 57, 58 and 59):
+- Obituaries ("Player1 killed Player2 with MP40") support for older RTCW versions 1.0 and 1.3x (protocol 57, 58 and 59):
 - Added uvMovieMod and Demoviewer features
 - Added some own made features
 
