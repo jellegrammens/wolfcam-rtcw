@@ -1450,7 +1450,7 @@ static void CG_ServerCommand( void ) {
 	// -NERVE - SMF
 
 	if ( !strcmp( cmd, "print" ) ) {
-		if (mm_wtvchat.integer) CG_Printf( "[cgnotify]%s", CG_LocalizeServerCommand( CG_Argv( 1 ) ) );
+		if (mm_wtvchat.integer) CG_Printf( "[cgnotfI]1%s", CG_LocalizeServerCommand( CG_Argv( 1 ) ) );
 #ifdef MISSIONPACK
 		cmd = CG_Argv(1);			// yes, this is obviously a hack, but so is the way we hear about
 									// votes passing or failing
