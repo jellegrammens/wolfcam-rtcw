@@ -505,7 +505,7 @@ CG_AddToNotify
 
 =======================
 */
-void CG_AddToNotify(const char *str) {
+void CG_AddToNotify(const char *str, int queueIndex) {
 	int len;
 	char *p, *ls;
 	int lastcolor;
@@ -520,13 +520,13 @@ void CG_AddToNotify(const char *str) {
 
 	if (chatHeight <= 0 || notifytime <= 0) {
 		// team chat disabled, dump into normal chat
-		cgs.notifyPos = cgs.notifyLastPos = 0;
+		cgs.notifyPos[queueIndex] = cgs.notifyLastPos[queueIndex] = 0;
 		return;
 	}
 
 	len = 0;
 
-	p = cgs.notifyMsgs[cgs.notifyPos % chatHeight];
+	p = cgs.notifyMsgs[queueIndex][cgs.notifyPos[queueIndex] % chatHeight];
 	*p = 0;
 
 	lastcolor = '7';
@@ -541,10 +541,10 @@ void CG_AddToNotify(const char *str) {
 			}
 			*p = 0;
 
-			cgs.notifyMsgTimes[cgs.notifyPos % chatHeight] = cg.time;
+			cgs.notifyMsgTimes[queueIndex][cgs.notifyPos[queueIndex] % chatHeight] = cg.time;
 
-			cgs.notifyPos++;
-			p = cgs.notifyMsgs[cgs.notifyPos % chatHeight];
+			cgs.notifyPos[queueIndex]++;
+			p = cgs.notifyMsgs[queueIndex][cgs.notifyPos[queueIndex] % chatHeight];
 			*p = 0;
 			*p++ = Q_COLOR_ESCAPE;
 			*p++ = lastcolor;
@@ -574,8 +574,8 @@ void CG_AddToNotify(const char *str) {
 	}
 	*p = 0;
 
-	cgs.notifyMsgTimes[cgs.notifyPos % chatHeight] = cg.time;
-	cgs.notifyPos++;
+	cgs.notifyMsgTimes[queueIndex][cgs.notifyPos[queueIndex] % chatHeight] = cg.time;
+	cgs.notifyPos[queueIndex]++;
 
 	//if (cgs.notifyPos - cgs.notifyLastPos > chatHeight)
 		//cgs.notifyLastPos = cgs.notifyPos - chatHeight;

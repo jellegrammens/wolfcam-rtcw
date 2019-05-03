@@ -121,7 +121,7 @@ void CG_AddPMItem(const char* message) {
 	size = 10;
 
 
-	CG_AddToNotify(message);
+	CG_AddToNotify(message, 0);
 	//CG_Text_Paint( 1, 50, 2,colourText, "hahaha", 0, 0, ITEM_TEXTSTYLE_SHADOWED);
 }
 
@@ -1000,7 +1000,8 @@ CG_DrawNotify
 =================
 */
 #define NOTIFYLOC_Y 64 // bottom end
-#define NOTIFYLOC_X 0
+#define NOTIFYLOC_X_LOCS {0, 300}
+#define NOTIFYLOC_X notifyX[queueIndex]
 
 void CG_DrawNotify( void ) {
 	int w, h;
@@ -1014,72 +1015,77 @@ void CG_DrawNotify( void ) {
 	int charWidth;
 	int charHeight;
 	int notifyY;
+	int notifyX[NOTIFY_QUEUES] = NOTIFYLOC_X_LOCS;
 
-	maxCharsBeforeOverlay = 300;
+	for (int queueIndex = 0;queueIndex < NOTIFY_QUEUES;queueIndex++) {
 
-	trap_Cvar_VariableStringBuffer("con_notifytime", var, sizeof(var));
-	notifytime = atof(var) * 1000;
+		maxCharsBeforeOverlay = 300;
 
-	if (notifytime <= 100.f)
-		notifytime = 100.0f;
+		trap_Cvar_VariableStringBuffer("con_notifytime", var, sizeof(var));
+		notifytime = atof(var) * 1000;
 
-	chatHeight = 8;
-	if (demo_numPopups.integer)
-		chatHeight = demo_numPopups.integer;
+		if (notifytime <= 100.f)
+			notifytime = 100.0f;
 
-	charWidth = TINYCHAR_WIDTH;
-	if (demo_popupWidth.integer)
-		charWidth = demo_popupWidth.integer;
+		chatHeight = 8;
+		if (demo_numPopups.integer)
+			chatHeight = demo_numPopups.integer;
 
-	charHeight = TINYCHAR_HEIGHT;
-	notifyY = NOTIFYLOC_Y;
-	if (demo_popupHeight.integer) {
-		charHeight = demo_popupHeight.integer;
-		notifyY = (demo_popupHeight.integer * chatHeight);
-	}
+		charWidth = TINYCHAR_WIDTH;
+		if (demo_popupWidth.integer)
+			charWidth = demo_popupWidth.integer;
 
-	if (cgs.notifyLastPos != cgs.notifyPos) {
-		if (cg.time - cgs.notifyMsgTimes[cgs.notifyLastPos % chatHeight] > notifytime) {
-			cgs.notifyLastPos++;
+		charHeight = TINYCHAR_HEIGHT;
+		notifyY = NOTIFYLOC_Y;
+		if (demo_popupHeight.integer) {
+			charHeight = demo_popupHeight.integer;
+			notifyY = (demo_popupHeight.integer * chatHeight);
 		}
 
-		h = (cgs.notifyPos - cgs.notifyLastPos) * charHeight;
+		if (cgs.notifyLastPos[queueIndex] != cgs.notifyPos[queueIndex]) {
+			if (cg.time - cgs.notifyMsgTimes[queueIndex][cgs.notifyLastPos[queueIndex] % chatHeight] > notifytime) {
+				cgs.notifyLastPos[queueIndex]++;
+			}
 
-		w = 0;
+			h = (cgs.notifyPos[queueIndex] - cgs.notifyLastPos[queueIndex]) * charHeight;
 
-		for (i = cgs.notifyLastPos; i < cgs.notifyPos; i++) {
-			len = CG_DrawStrlen(cgs.notifyMsgs[i % chatHeight]);
-			if (len > w)
-				w = len;
+			w = 0;
+
+			for (i = cgs.notifyLastPos[queueIndex]; i < cgs.notifyPos[queueIndex]; i++) {
+				len = CG_DrawStrlen(cgs.notifyMsgs[queueIndex][i % chatHeight]);
+				if (len > w)
+					w = len;
+			}
+			w *= charWidth;
+			w += charWidth * 2;
+
+			if (maxCharsBeforeOverlay <= 0)
+				maxCharsBeforeOverlay = 300;
+
+			for (i = cgs.notifyPos[queueIndex] - 1; i >= cgs.notifyLastPos[queueIndex]; i--) {
+				alphapercent = 1.0f - ((cg.time - cgs.notifyMsgTimes[queueIndex][i % chatHeight]) / notifytime);
+				if (alphapercent > 0.5f)
+					alphapercent = 1.0f;
+				else
+					alphapercent *= 2;
+
+				if (alphapercent < 0.f)
+					alphapercent = 0.f;
+
+				hcolor[0] = hcolor[1] = hcolor[2] = 1.0;
+				hcolor[3] = alphapercent;
+				trap_R_SetColor(hcolor);
+
+				if (mm_shadowedPopups.integer) blub = qtrue;
+				else blub = qfalse;
+
+				CG_DrawStringExt(NOTIFYLOC_X + charWidth,
+					notifyY - (cgs.notifyPos[queueIndex] - i)*charHeight,
+					cgs.notifyMsgs[queueIndex][i % chatHeight], hcolor, qfalse, blub,
+					charWidth, charHeight, maxCharsBeforeOverlay);
+			}
 		}
-		w *= charWidth;
-		w += charWidth * 2;
 
-		if (maxCharsBeforeOverlay <= 0)
-			maxCharsBeforeOverlay = 300;
-
-		for (i = cgs.notifyPos - 1; i >= cgs.notifyLastPos; i--) {
-			alphapercent = 1.0f - ((cg.time - cgs.notifyMsgTimes[i % chatHeight]) / notifytime);
-			if (alphapercent > 0.5f)
-				alphapercent = 1.0f;
-			else
-				alphapercent *= 2;
-
-			if (alphapercent < 0.f)
-				alphapercent = 0.f;
-
-			hcolor[0] = hcolor[1] = hcolor[2] = 1.0;
-			hcolor[3] = alphapercent;
-			trap_R_SetColor(hcolor);
-
-			if (mm_shadowedPopups.integer) blub = qtrue;
-			else blub = qfalse;
-
-			CG_DrawStringExt(NOTIFYLOC_X + charWidth,
-				notifyY - (cgs.notifyPos - i)*charHeight,
-				cgs.notifyMsgs[i % chatHeight], hcolor, qfalse, blub,
-				charWidth, charHeight, maxCharsBeforeOverlay);
-		}
 	}
 }
 
