@@ -1848,8 +1848,10 @@ void CG_DrawActiveFrame( int serverTime, stereoFrame_t stereoView, qboolean demo
 		CG_AddTestModel();
 	}
 	cg.refdef.time = cg.time;
-	memcpy( cg.refdef.areamask, cg.snap->areamask, sizeof( cg.refdef.areamask ) );
-
+	if (!wolfcam_following)
+		memcpy( cg.refdef.areamask, cg.snap->areamask, sizeof( cg.refdef.areamask ) );
+	else
+		memset(cg.refdef.areamask, 0, sizeof(cg.refdef.areamask));
 	DEBUGTIME
 
 	// warning sounds when powerup is wearing off
