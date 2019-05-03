@@ -102,6 +102,8 @@ void wolfcam_check_headshot (int sourceClientNum, int hitClientNum, vec3_t endPo
 				//CG_Printf ("^2HEADSHOT\n");
 				//FIXME mg42
 				wclients[sourceClientNum].wstats[cg_entities[sourceClientNum].currentState.weapon].headshots++;
+				CG_Printf("%d -> %d   %s   ^7->   %s\n", sourceClientNum, hitClientNum,
+					cgs.clientinfo[sourceClientNum].name, cgs.clientinfo[hitClientNum].name);
 
 			}
 		}
