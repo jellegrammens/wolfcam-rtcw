@@ -405,7 +405,12 @@ void CG_DrawStringExt( int x, int y, const char *string, const float *setColor,
 	while ( *s && cnt < maxChars) {
 		if ( Q_IsColorString( s ) ) {
 			if ( !forceColor ) {
-				memcpy( color, g_color_table[ColorIndex(*(s+1))], sizeof( color ) );
+				if (demo_ospColors.integer) {
+					memcpy(color, g_color_table_ext[ColorIndexExt(*(s + 1))], sizeof(color));
+				}
+				else {
+					memcpy(color, g_color_table[ColorIndex(*(s + 1))], sizeof(color));
+				}
 				color[3] = setColor[3];
 				trap_R_SetColor( color );
 			}
@@ -467,7 +472,12 @@ void CG_DrawStringExt2( int x, int y, const char *string, const float *setColor,
 	while ( *s && cnt < maxChars) {
 		if ( Q_IsColorString( s ) ) {
 			if ( !forceColor ) {
-				memcpy( color, g_color_table[ColorIndex(*(s+1))], sizeof( color ) );
+				if (demo_ospColors.integer) {
+					memcpy(color, g_color_table_ext[ColorIndexExt(*(s + 1))], sizeof(color));
+				}
+				else {
+					memcpy(color, g_color_table[ColorIndex(*(s + 1))], sizeof(color));
+				}
 				color[3] = setColor[3];
 				trap_R_SetColor( color );
 			}
@@ -542,7 +552,12 @@ void CG_DrawStringExt3( int x, int y, const char *string, const float *setColor,
 	while ( *s && cnt < maxChars) {
 		if ( Q_IsColorString( s ) ) {
 			if ( !forceColor ) {
-				memcpy( color, g_color_table[ColorIndex(*(s+1))], sizeof( color ) );
+				if (demo_ospColors.integer) {
+					memcpy(color, g_color_table_ext[ColorIndexExt(*(s + 1))], sizeof(color));
+				}
+				else {
+					memcpy(color, g_color_table[ColorIndex(*(s + 1))], sizeof(color));
+				}
 				color[3] = setColor[3];
 				trap_R_SetColor( color );
 			}

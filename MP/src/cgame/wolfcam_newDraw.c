@@ -1683,7 +1683,12 @@ static void CG_Text_Paint_Limit(float *maxX, float x, float y, float scale, vec4
 		while (s && *s && count < len) {
 			glyph = &font->glyphs[(unsigned char)*s];			// NERVE - SMF - this needs to be an unsigned cast for localization
 			if ( Q_IsColorString( s ) ) {
-				memcpy( newColor, g_color_table[ColorIndex(*(s+1))], sizeof( newColor ) );
+				if (demo_ospColors.integer) {
+					memcpy(newColor, g_color_table_ext[ColorIndexExt(*(s + 1))], sizeof(newColor));
+				}
+				else {
+					memcpy(newColor, g_color_table[ColorIndex(*(s + 1))], sizeof(newColor));
+				}
 				newColor[3] = color[3];
 				trap_R_SetColor( newColor );
 				s += 2;
