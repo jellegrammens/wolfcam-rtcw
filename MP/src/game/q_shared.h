@@ -441,7 +441,7 @@ extern	vec4_t		colorDkGrey;
 #define COLOR_MAGENTA	'6'
 #define COLOR_WHITE		'7'
 #define ColorIndex(c)	( ( (c) - '0' ) & 7 )
-#define ColorIndexExt(c, b)   ( ( ( c ) - '0' ) & 31 )
+#define ColorIndexExt(c)   ( ( ( c ) - '0' ) & 31 )
 
 #define S_COLOR_BLACK	"^0"
 #define S_COLOR_RED		"^1"
