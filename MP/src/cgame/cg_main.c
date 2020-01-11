@@ -282,6 +282,7 @@ vmCvar_t	demo_numPopups;
 vmCvar_t	demo_popupHeight;
 vmCvar_t	demo_popupWidth;
 vmCvar_t	demo_ospColors;
+vmCvar_t	mm_seperateNotifyQueue;
 
 typedef struct {
 	vmCvar_t	*vmCvar;
@@ -518,7 +519,8 @@ cvarTable_t		cvarTable[] = {
 	{ &demo_numPopups, "demo_numPopups", "8", CVAR_ARCHIVE },
 	{ &demo_popupHeight, "demo_popupHeight", "10", CVAR_ARCHIVE },
 	{ &demo_popupWidth, "demo_popupWidth", "8", CVAR_ARCHIVE },
-	{ &demo_ospColors, "demo_ospColors", "1", CVAR_ARCHIVE }
+	{ &demo_ospColors, "demo_ospColors", "1", CVAR_ARCHIVE },
+	{ &mm_seperateNotifyQueue, "mm_seperateNotifyQueue", "0", CVAR_ARCHIVE }
 };
 int		cvarTableSize = sizeof( cvarTable ) / sizeof( cvarTable[0] );
 

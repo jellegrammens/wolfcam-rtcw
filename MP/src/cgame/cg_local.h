@@ -1789,6 +1789,7 @@ extern  vmCvar_t	demo_numPopups;
 extern	vmCvar_t	demo_popupHeight;
 extern	vmCvar_t	demo_popupWidth;
 extern	vmCvar_t	demo_ospColors;
+extern  vmCvar_t	mm_seperateNotifyQueue;
 
 extern  vec4_t          colorBlack;
 extern  vec4_t          colorRed;
