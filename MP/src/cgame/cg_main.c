@@ -767,10 +767,28 @@ void QDECL CG_Printf( const char *msg, ... ) {
 			return;
 		}
 
-		CG_AddToNotify( &text[10] );
+		CG_AddToNotify( &text[10] , 0);
 		Q_strncpyz( buf, &text[10], 1013 );
 		Q_strncpyz( text, "[skipnotify]", 13 );
 		Q_strcat( text, 1011, buf );
+	} else if (!Q_strncmp(text, "[cgnotfI]", 9)) {
+		char buf[1024];
+
+		if (!cg_drawNotifyText.integer) {
+			Q_strncpyz(buf, &text[10], 1013);
+			trap_Print(buf);
+			return;
+		}
+
+		char a[2];
+		a[0] = text[9];
+		a[1] = 0;
+		int queueIndex = atoi(a);
+		if (queueIndex >= 0 && queueIndex<NOTIFY_QUEUES)
+			CG_AddToNotify(&text[10], queueIndex);
+		Q_strncpyz(buf, &text[10], 1013);
+		Q_strncpyz(text, "[skipnotify]", 13);
+		Q_strcat(text, 1011, buf);
 	}
 
 	trap_Print( text );

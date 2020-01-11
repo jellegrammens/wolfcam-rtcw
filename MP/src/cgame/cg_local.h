@@ -58,6 +58,8 @@
 #define	NOTIFY_WIDTH		80
 #define NOTIFY_HEIGHT		8
 
+#define NOTIFY_QUEUES		2
+
 // very large characters
 #define	GIANT_WIDTH			32
 #define	GIANT_HEIGHT		48
@@ -1539,10 +1541,10 @@ typedef struct {
 	int				teamLastChatPos;
 
 	// New notify mechanism for obits
-	char			notifyMsgs[NOTIFY_HEIGHT][NOTIFY_WIDTH*3+1];
-	int				notifyMsgTimes[NOTIFY_HEIGHT];
-	int				notifyPos;
-	int				notifyLastPos;
+	char			notifyMsgs[NOTIFY_QUEUES][NOTIFY_HEIGHT][NOTIFY_WIDTH*3+1];
+	int				notifyMsgTimes[NOTIFY_QUEUES][NOTIFY_HEIGHT];
+	int				notifyPos[NOTIFY_QUEUES];
+	int				notifyLastPos[NOTIFY_QUEUES];
 
 	int cursorX;
 	int cursorY;
@@ -2249,7 +2251,7 @@ void CG_ShaderStateChanged(void);
 void CG_SendMoveSpeed( animation_t *animList, int numAnims, char *modelName );
 void CG_LoadVoiceChats();				// NERVE - SMF
 void CG_PlayBufferedVoiceChats();		// NERVE - SMF
-void CG_AddToNotify( const char *str );
+void CG_AddToNotify( const char *str , int queueIndex);
 
 //
 // cg_playerstate.c
