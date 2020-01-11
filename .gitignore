@@ -1,0 +1,10 @@
+
+*.tlog
+
+*.obj
+
+MP/src/cgame/Release/
+
+*.log
+
+MP/src/cgame/.vs/cgame/v15/
