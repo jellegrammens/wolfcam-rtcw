@@ -1004,8 +1004,9 @@ void CG_DrawPickupItem( void ) {
 CG_DrawNotify
 =================
 */
-#define NOTIFYLOC_Y 64 // bottom end
-#define NOTIFYLOC_X_LOCS {0, 300}
+#define NOTIFYLOC_Y_LOCS {64, 475} 
+#define NOTIFYLOC_Y notifyY[queueIndex]
+#define NOTIFYLOC_X_LOCS {0, 0}
 #define NOTIFYLOC_X notifyX[queueIndex]
 
 void CG_DrawNotify( void ) {
@@ -1019,7 +1020,7 @@ void CG_DrawNotify( void ) {
 	qboolean blub;
 	int charWidth;
 	int charHeight;
-	int notifyY;
+	int notifyY[NOTIFY_QUEUES] = NOTIFYLOC_Y_LOCS;
 	int notifyX[NOTIFY_QUEUES] = NOTIFYLOC_X_LOCS;
 
 	for (int queueIndex = 0;queueIndex < NOTIFY_QUEUES;queueIndex++) {
@@ -1041,10 +1042,8 @@ void CG_DrawNotify( void ) {
 			charWidth = demo_popupWidth.integer;
 
 		charHeight = TINYCHAR_HEIGHT;
-		notifyY = NOTIFYLOC_Y;
 		if (demo_popupHeight.integer) {
 			charHeight = demo_popupHeight.integer;
-			notifyY = (demo_popupHeight.integer * chatHeight);
 		}
 
 		if (cgs.notifyLastPos[queueIndex] != cgs.notifyPos[queueIndex]) {
@@ -1085,7 +1084,7 @@ void CG_DrawNotify( void ) {
 				else blub = qfalse;
 
 				CG_DrawStringExt(NOTIFYLOC_X + charWidth,
-					notifyY - (cgs.notifyPos[queueIndex] - i)*charHeight,
+					NOTIFYLOC_Y - (cgs.notifyPos[queueIndex] - i)*charHeight,
 					cgs.notifyMsgs[queueIndex][i % chatHeight], hcolor, qfalse, blub,
 					charWidth, charHeight, maxCharsBeforeOverlay);
 			}
